@@ -87,9 +87,13 @@ end
 
 group(:development) do # Development dependencies (as in the gemspec)
 
+  gem 'dm-validations', DM_VERSION, :git => "#{DATAMAPPER}/dm-validations.git"
+
   gem 'shoulda',         '>= 0'
   gem 'mocha',           '= 0.9.8'
   gem 'aws-s3',          '>= 0'
+
+  gem 'rake',           '~> 0.8.7'
 
 end
 
