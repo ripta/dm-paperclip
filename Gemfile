@@ -110,7 +110,7 @@ end
 
 group :datamapper do # We need this because we want to pin these dependencies to their git master sources
 
-  adapters = ENV['ADAPTER'] || ENV['ADAPTERS']
+  adapters = ENV['ADAPTER'] || ENV['ADAPTERS'] || 'sqlite'
   adapters = adapters.to_s.gsub(',',' ').split(' ') - ['in_memory']
 
   unless adapters.empty?
