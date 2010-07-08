@@ -1,4 +1,8 @@
 require 'rubygems'
+require 'bundler'
+Bundler.setup
+Bundler.require(:development, :runtime, :datamapper)
+
 require 'test/unit'
 require 'shoulda'
 require 'mocha'
