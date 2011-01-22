@@ -56,7 +56,7 @@ task :clean do |t|
 end
 
 spec = Gem::Specification.new do |s| 
-  s.name              = "dm-paperclip"
+  s.name              = "ripta-dm-paperclip"
   s.version           = Paperclip::VERSION
   s.author            = "Ken Robertson"
   s.email             = "ken@invalidlogic.com"
