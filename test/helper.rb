@@ -8,7 +8,11 @@ require 'shoulda'
 require 'mocha'
 require 'tempfile'
 
-require 'extlib'
+if ENV['EXTLIB']
+  require 'extlib'
+else
+  require 'active_support/all'
+end
 require 'dm-core'
 require 'dm-validations'
 require 'dm-migrations'
