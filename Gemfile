@@ -71,14 +71,14 @@
 source 'http://rubygems.org'
 
 DATAMAPPER = 'git://github.com/datamapper'
-DM_VERSION = '~> 1.0.0'
+DM_VERSION = '~> 1.1.0'
 
 group :runtime do # Runtime dependencies (as in the gemspec)
 
   if ENV['EXTLIB']
     gem 'extlib',        '~> 0.9.15',      :git => "#{DATAMAPPER}/extlib.git"
   else
-    gem 'activesupport', '~> 3.0.0.beta3', :git => 'git://github.com/rails/rails.git', :require => nil
+    gem 'activesupport', '~> 3.0.0', :git => 'git://github.com/rails/rails.git', :require => nil
   end
 
   gem 'dm-core', DM_VERSION, :git => "#{DATAMAPPER}/dm-core.git"
