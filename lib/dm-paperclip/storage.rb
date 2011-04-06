@@ -172,15 +172,15 @@ module Paperclip
       end
 
       def parse_credentials creds
-        creds = find_credentials(creds).to_mash.stringify_keys!
+        creds = find_credentials(creds).to_hash.stringify_keys
         if defined? Merb && Merb.respond_to?(:env)
-          (creds[Merb.env] || creds).symbolize_keys
+          (creds[Merb.env.to_s] || creds).symbolize_keys
         elsif defined? RAILS_ENV
-          (creds[RAILS_ENV] || creds).symbolize_keys
+          (creds[RAILS_ENV.to_s] || creds).symbolize_keys
         elsif defined? Rails && Rails.respond_to(:env)
-          (creds[Rails.env] || creds).symbolize_keys
+          (creds[Rails.env.to_s] || creds).symbolize_keys
         elsif defined? RACK_ENV
-          (creds[RACK_ENV] || creds).symbolize_keys
+          (creds[RACK_ENV.to_s] || creds).symbolize_keys
         else
           creds.symbolize_keys
         end
