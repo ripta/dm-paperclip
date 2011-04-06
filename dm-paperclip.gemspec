@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.requirements = ["ImageMagick"]
   s.rubyforge_project = %q{dm-paperclip}
   s.rubygems_version = %q{1.6.2}
-  s.summary = %q{Ripta's modifications to file attachments as attributes for DataMapper, based on the original Paperclip by Jon Yurek at Thoughtbot}
+  s.summary = %q{File attachments as attributes for DataMapper 1.1, based on the original Paperclip by Jon Yurek at Thoughtbot}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
