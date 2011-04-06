@@ -1,0 +1,155 @@
+GIT
+  remote: git://github.com/datamapper/dm-core.git
+  revision: aafe94a21b91f560b67927885e805f61055fb292
+  specs:
+    dm-core (1.1.0)
+      addressable (~> 2.2.4)
+
+GIT
+  remote: git://github.com/datamapper/dm-do-adapter.git
+  revision: 3a285521efa295044c85827442f755d718b23335
+  specs:
+    dm-do-adapter (1.1.0)
+      data_objects (~> 0.10.2)
+      dm-core (~> 1.1.0)
+
+GIT
+  remote: git://github.com/datamapper/dm-migrations.git
+  revision: 359411d27b15a30062b5473bc60b73ab9bdca695
+  specs:
+    dm-migrations (1.1.0)
+      dm-core (~> 1.1.0)
+
+GIT
+  remote: git://github.com/datamapper/dm-sqlite-adapter.git
+  revision: 3c7cfea87327fe7aae7bb67a9693249baf77af39
+  specs:
+    dm-sqlite-adapter (1.1.0)
+      dm-do-adapter (~> 1.1.0)
+      do_sqlite3 (~> 0.10.2)
+
+GIT
+  remote: git://github.com/datamapper/dm-validations.git
+  revision: 310bfd2eb103ea436775a898be99bed1f864ce00
+  specs:
+    dm-validations (1.1.0)
+      dm-core (~> 1.1.0)
+
+GIT
+  remote: git://github.com/datamapper/do.git
+  revision: 4d59b8204da3845a78b97d14b0a2e163ae0cc350
+  specs:
+    data_objects (0.10.3)
+      addressable (~> 2.1)
+    do_sqlite3 (0.10.3)
+      data_objects (= 0.10.3)
+
+GIT
+  remote: git://github.com/rails/rails.git
+  revision: 3940e345aacb67cb95600acda0f01cb8b02112c0
+  tag: 3-0-stable
+  specs:
+    activesupport (3.0.6)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    Saikuro (1.1.0)
+    abstract (1.0.0)
+    addressable (2.2.4)
+    arrayfields (4.7.4)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
+    builder (3.0.0)
+    chronic (0.3.0)
+    churn (0.0.13)
+      chronic (>= 0.2.3)
+      hirb
+      json_pure
+      main
+      ruby_parser (~> 2.0.4)
+      sexp_processor (~> 3.0.3)
+    colored (1.2)
+    erubis (2.6.6)
+      abstract (>= 1.0.0)
+    fattr (2.2.0)
+    flay (1.4.2)
+      ruby_parser (~> 2.0)
+      sexp_processor (~> 3.0)
+    flog (2.5.1)
+      ruby_parser (~> 2.0)
+      sexp_processor (~> 3.0)
+    haml (3.0.25)
+    hirb (0.4.3)
+    i18n (0.5.0)
+    json_pure (1.5.1)
+    main (4.4.0)
+      arrayfields (>= 4.7.4)
+      fattr (>= 2.1.0)
+    metric_fu (1.5.1)
+      Saikuro (>= 1.1.0)
+      activesupport (>= 2.0.0)
+      chronic (>= 0.2.3)
+      churn (>= 0.0.7)
+      flay (>= 1.2.1)
+      flog (>= 2.2.0)
+      rails_best_practices (>= 0.3.16)
+      rcov (>= 0.8.3.3)
+      reek (>= 1.2.6)
+      roodi (>= 2.1.0)
+    mime-types (1.16)
+    mocha (0.9.8)
+      rake
+    rails_best_practices (0.7.5)
+      activesupport
+      colored (~> 1.2)
+      erubis (~> 2.6.6)
+      haml (~> 3.0.18)
+      i18n
+      ruby-progressbar (~> 0.0.9)
+      ruby_parser (~> 2.0.4)
+    rake (0.8.7)
+    rcov (0.9.9)
+    reek (1.2.8)
+      ruby2ruby (~> 1.2)
+      ruby_parser (~> 2.0)
+      sexp_processor (~> 3.0)
+    roodi (2.1.0)
+      ruby_parser
+    ruby-progressbar (0.0.9)
+    ruby2ruby (1.2.5)
+      ruby_parser (~> 2.0)
+      sexp_processor (~> 3.0)
+    ruby_parser (2.0.6)
+      sexp_processor (~> 3.0)
+    sexp_processor (3.0.5)
+    shoulda (2.11.3)
+    xml-simple (1.0.15)
+    yard (0.6.5)
+    yardstick (0.3.0)
+      yard (~> 0.6.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activesupport (~> 3.0.0)!
+  aws-s3
+  data_objects (~> 0.10.3)!
+  dm-core (~> 1.1.0)!
+  dm-do-adapter (~> 1.1.0)!
+  dm-migrations (~> 1.1.0)!
+  dm-sqlite-adapter (~> 1.1.0)!
+  dm-validations (~> 1.1.0)!
+  do_sqlite3 (~> 0.10.3)!
+  metric_fu (~> 1.3)
+  mocha (= 0.9.8)
+  rake (~> 0.8.7)
+  rcov (~> 0.9.8)
+  reek (~> 1.2.8)
+  roodi (~> 2.1)
+  shoulda
+  yard (~> 0.5)
+  yardstick (~> 0.1)
