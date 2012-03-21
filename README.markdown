@@ -1,6 +1,10 @@
 # DataMapper Paperclip
 
-**Compatibility note:** dm-paperclip 2.5.0 requires datamapper (dm-core) 1.0, while dm-paperclip 2.5.1 requires dm-core 1.1.
+**Compatibility note:**
+
+* dm-paperclip v2.5.0 requires datamapper (dm-core) v1.0
+* dm-paperclip v2.5.1 requires dm-core v1.1
+* dm-paperclip v2.6.0 requires dm-core v1.2
 
 dm-paperclip is a port of Thoughtbot's Paperclip plugin to work with DataMapper. This plugin is fully compatible with
 the original ActiveRecord-oriented Paperclip.  You could take an existing ActiveRecord database and use it with DataMapper.
