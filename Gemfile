@@ -71,29 +71,29 @@
 source 'http://rubygems.org'
 
 DATAMAPPER = 'git://github.com/datamapper'
-DM_VERSION = '~> 1.1.0'
+DM_VERSION = '~> 1.2.0'
 
 group :runtime do # Runtime dependencies (as in the gemspec)
 
   if ENV['EXTLIB']
     gem 'extlib',        '~> 0.9.15',      :git => "#{DATAMAPPER}/extlib.git"
   else
-    gem 'activesupport', '~> 3.0.0', :git => 'git://github.com/rails/rails.git', :require => nil, :tag => "3-0-stable"
+    gem 'activesupport', '~> 3.2.0', :git => 'git://github.com/rails/rails.git', :require => nil, :tag => "3-2-stable"
   end
 
-  gem 'dm-core', DM_VERSION, :git => "#{DATAMAPPER}/dm-core.git"
+  gem 'dm-core', DM_VERSION #, :git => "#{DATAMAPPER}/dm-core.git"
 
 end
 
 group(:development) do # Development dependencies (as in the gemspec)
 
-  gem 'dm-validations', DM_VERSION, :git => "#{DATAMAPPER}/dm-validations.git"
+  gem 'dm-validations', DM_VERSION #, :git => "#{DATAMAPPER}/dm-validations.git"
 
   gem 'shoulda',         '>= 0'
   gem 'mocha',           '= 0.9.8'
   gem 'aws-s3',          '>= 0'
 
-  gem 'rake',           '~> 0.8.7'
+  gem 'rake',           '~> 0.9.0'
 
 end
 
@@ -118,19 +118,19 @@ group :datamapper do # We need this because we want to pin these dependencies to
     DO_VERSION     = '~> 0.10.3'
     DM_DO_ADAPTERS = %w[sqlite postgres mysql oracle sqlserver]
 
-    gem 'data_objects',  DO_VERSION, :git => "#{DATAMAPPER}/do.git"
+    gem 'data_objects',  DO_VERSION #, :git => "#{DATAMAPPER}/do.git"
 
     adapters.each do |adapter|
       if DM_DO_ADAPTERS.any? { |dm_do_adapter| dm_do_adapter =~ /#{adapter}/  }
         adapter = 'sqlite3' if adapter == 'sqlite'
-        gem "do_#{adapter}", DO_VERSION, :git => "#{DATAMAPPER}/do.git"
+        gem "do_#{adapter}", DO_VERSION #, :git => "#{DATAMAPPER}/do.git"
       end
     end
 
-    gem 'dm-do-adapter', DM_VERSION, :git => "#{DATAMAPPER}/dm-do-adapter.git"
+    gem 'dm-do-adapter', DM_VERSION #, :git => "#{DATAMAPPER}/dm-do-adapter.git"
 
     adapters.each do |adapter|
-      gem "dm-#{adapter}-adapter", DM_VERSION, :git => "#{DATAMAPPER}/dm-#{adapter}-adapter.git"
+      gem "dm-#{adapter}-adapter", DM_VERSION #, :git => "#{DATAMAPPER}/dm-#{adapter}-adapter.git"
     end
 
   end
@@ -139,7 +139,7 @@ group :datamapper do # We need this because we want to pin these dependencies to
   plugins = (plugins.to_s.gsub(',',' ').split(' ') + ['dm-migrations']).uniq
 
   plugins.each do |plugin|
-    gem plugin, DM_VERSION, :git => "#{DATAMAPPER}/#{plugin}.git"
+    gem plugin, DM_VERSION #, :git => "#{DATAMAPPER}/#{plugin}.git"
   end
 
 end
