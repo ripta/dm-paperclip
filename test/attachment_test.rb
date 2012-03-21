@@ -1,4 +1,4 @@
-require 'test/helper'
+require File.dirname(__FILE__) + '/helper'
 
 class Dummy
   # This is a dummy class
