@@ -84,12 +84,20 @@ module Paperclip
         instance_write(:content_type,    uploaded_file['content_type'] ? uploaded_file['content_type'].strip : uploaded_file['tempfile'].content_type.to_s.strip)
         instance_write(:file_size,       uploaded_file['size'] ? uploaded_file['size'].to_i : uploaded_file['tempfile'].size.to_i)
         instance_write(:updated_at,      Time.now)
-      else
+      elsif uploaded_file.respond_to?(:to_tempfile)
         @queued_for_write[:original]   = uploaded_file.to_tempfile
         instance_write(:file_name,       uploaded_file.original_filename.strip.gsub(/[^\w\d\.\-]+/, '_'))
         instance_write(:content_type,    uploaded_file.content_type.to_s.strip)
         instance_write(:file_size,       uploaded_file.size.to_i)
         instance_write(:updated_at,      Time.now)
+      else uploaded_file.respond_to?(:tempfile)
+        @queued_for_write[:original]   = uploaded_file.tempfile
+        instance_write(:file_name,       uploaded_file.original_filename.strip.gsub(/[^\w\d\.\-]+/, '_'))
+        instance_write(:content_type,    uploaded_file.content_type.to_s.strip)
+        instance_write(:file_size,       uploaded_file.size.to_i)
+        instance_write(:updated_at,      Time.now)
+      else
+        raise ArgumentError, "The +uploaded_file+ (#{uploaded_file.class.name}) must respond to one of: [], to_tempfile, or tempfile"
       end
 
       @dirty = true
